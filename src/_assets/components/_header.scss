@@ -1,0 +1,45 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+
+  img {
+	margin-left: 20px;
+    width: 75px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+
+    li {
+      margin: 0 20px;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+
+        .active {
+          color: red !important;
+        }
+      }
+
+      a:link,
+      a:visited {
+        color: #222;
+      }
+
+      a:hover,
+      a.active {
+        color: #888;
+      }
+
+      a:active {
+        color: #666;
+      }
+    }
+  }
+}

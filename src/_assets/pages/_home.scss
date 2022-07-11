@@ -1,0 +1,29 @@
+.personal-info {
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 10px;
+  display: flex;
+  margin-bottom: 20px;
+
+  img {
+    width: 175px !important;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+  }
+
+  .details-list {
+	margin-left: 20px;
+    width: 100%;
+
+    .details-list__item {
+      display: inline-block;
+      width: 33.3%;
+	  margin: 15px 0;
+
+      .key {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
