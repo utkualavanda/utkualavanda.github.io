@@ -1,0 +1,18 @@
+{
+  "header_navigation_resume": "Resume",
+  "header_navigation_travel": "Travel",
+  "home_welcome_message": "Welcome to my personal website. Here you can find some of my personal information. You can also visit the tabs above to see more about my professional experiences and travels.",
+  "home_personal_info_name_key": "Full Name",
+  "home_personal_info_name_value": "Utku Alavanda",
+  "home_personal_info_birth_year_key": "Year of Birth",
+  "home_personal_info_nationality_key": "Nationality",
+  "home_personal_info_nationality_value": "Turkish",
+  "home_personal_info_residence_key": "Current Residence",
+  "home_personal_info_residence_value": "Istanbul / Turkey",
+  "home_personal_info_workplace_key": "Current Workplace",
+  "home_personal_info_workplace_value": "Sekerbank",
+  "home_personal_info_job_title_key": "Title",
+  "home_personal_info_job_title_value": "Front End Developer",
+  "travel_italy_header": "Italy",
+  "travel_germany_header": "Germany"
+}

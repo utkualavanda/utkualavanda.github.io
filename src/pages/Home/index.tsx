@@ -1,15 +1,15 @@
-import { Layout } from '../../components/Layout';
-import { PersonalInfo } from '../../components/PersonalInfo';
+import { useTranslation } from 'react-i18next';
+
+import { Layout } from '../../components';
+import { PersonalInfo } from './PersonalInfo';
 
 export const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <Layout title="Utku Alavanda | Front-end Developer">
       <PersonalInfo />
-      <div>
-        Welcome to my personal website. Here you can find some of my personal
-        information. You can also visit the tabs above to see more about my
-        professional experiences and travels.
-      </div>
+      <div>{t('home_welcome_message')}</div>
     </Layout>
   );
 };

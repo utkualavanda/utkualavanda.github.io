@@ -1,4 +1,4 @@
-import { Layout } from '../../components/Layout';
+import { Layout } from '../../components';
 import resume from '../../static/resume.pdf';
 
 export const Resume = () => {
