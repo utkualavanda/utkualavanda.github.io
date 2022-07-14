@@ -26,7 +26,7 @@ export const Header = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [cookies, setCookie] = useCookies(['i18next', 'theme']);
-  const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
+  const [showBurgerMenu, setShowBurgerMenu] = useState<boolean>(false);
 
   const navigationItems: INavigationItem[] = [
     {
@@ -158,18 +158,17 @@ export const Header = () => {
             }}
           />
         </li>
-        <li>
+        <li className="burger-menu-button">
           <IconButton
-            className="buger-menu-buton"
-            onClick={() => setBurgerMenu((prevState) => !prevState)}
+            onClick={() => setShowBurgerMenu((prevState) => !prevState)}
           >
             <Menu />
           </IconButton>
         </li>
         <Drawer
           anchor="right"
-          open={burgerMenu}
-          onClose={() => setBurgerMenu(false)}
+          open={showBurgerMenu}
+          onClose={() => setShowBurgerMenu(false)}
         >
           <List>
             {navigationItems.map((item, index) => (

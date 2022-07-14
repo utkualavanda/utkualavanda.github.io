@@ -11,7 +11,7 @@ export const Resume = () => {
       <iframe
         src={resume}
         title="resume"
-        style={{ width: '100%', height: '1200px', marginBottom: '100px' }}
+        style={{ width: '100%', height: '1200px' }}
       />
     </Layout>
   );
