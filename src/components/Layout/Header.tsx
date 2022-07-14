@@ -1,6 +1,15 @@
-import { useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { IconButton, Tooltip } from '@mui/material';
+import { useEffect, useState } from 'react';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
+import {
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Tooltip,
+} from '@mui/material';
+import { Menu } from '@mui/icons-material';
 import i18next from 'i18next';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
@@ -8,9 +17,27 @@ import { useTranslation } from 'react-i18next';
 import { languageOptionsConst } from '../../common/constants';
 import { Select } from '../../components';
 
+interface INavigationItem {
+  path: string;
+  text: string;
+}
+
 export const Header = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [cookies, setCookie] = useCookies(['i18next', 'theme']);
+  const [burgerMenu, setBurgerMenu] = useState<boolean>(false);
+
+  const navigationItems: INavigationItem[] = [
+    {
+      path: '/resume',
+      text: t('header_navigation_resume'),
+    },
+    {
+      path: '/travel',
+      text: t('header_navigation_travel'),
+    },
+  ];
 
   useEffect(() => {
     if (cookies.theme) {
@@ -85,12 +112,11 @@ export const Header = () => {
         />
       </Link>
       <ul>
-        <li>
-          <NavLink to="/resume">{t('header_navigation_resume')}</NavLink>
-        </li>
-        <li>
-          <NavLink to="/travel">{t('header_navigation_travel')}</NavLink>
-        </li>
+        {navigationItems.map((item) => (
+          <li>
+            <NavLink to={item.path}>{item.text}</NavLink>
+          </li>
+        ))}
         <li>
           <IconButton
             onClick={() => {
@@ -132,6 +158,32 @@ export const Header = () => {
             }}
           />
         </li>
+        <li>
+          <IconButton
+            className="buger-menu-buton"
+            onClick={() => setBurgerMenu((prevState) => !prevState)}
+          >
+            <Menu />
+          </IconButton>
+        </li>
+        <Drawer
+          anchor="right"
+          open={burgerMenu}
+          onClose={() => setBurgerMenu(false)}
+        >
+          <List>
+            {navigationItems.map((item, index) => (
+              <ListItem key={index} disablePadding>
+                <ListItemButton>
+                  <ListItemText
+                    primary={item.text}
+                    onClick={() => navigate(item.path)}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
       </ul>
     </div>
   );

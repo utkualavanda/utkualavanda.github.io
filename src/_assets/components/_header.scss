@@ -18,6 +18,10 @@
     li {
       margin: 0 20px;
 
+      @media only screen and (max-width: 575px) {
+        margin: 0 5px;
+      }
+
       img {
         width: 30px;
       }
@@ -25,6 +29,10 @@
       a {
         text-decoration: none;
         font-weight: bold;
+
+        @media only screen and (max-width: 575px) {
+          display: none;
+        }
       }
 
       a:link,
@@ -35,6 +43,12 @@
       a.active {
         padding-bottom: 10px;
         border-bottom: 2px solid green;
+      }
+
+      .buger-menu-buton {
+        @media only screen and (min-width: 575px) {
+          display: none;
+        }
       }
     }
   }

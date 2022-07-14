@@ -6,19 +6,27 @@
   margin-bottom: 20px;
 
   img {
-    width: 175px !important;
+    width: 175px;
     border-radius: 50%;
     border: 1px solid #aaa;
+    @media only screen and (max-width: 500px) {
+	  width: 30%;
+	  height: 30%;
+    }
   }
 
   .details-list {
-	margin-left: 20px;
+    margin-left: 20px;
     width: 100%;
 
     .details-list__item {
       display: inline-block;
       width: 33.3%;
-	  margin: 15px 0;
+      margin: 15px 0;
+
+      @media only screen and (max-width: 500px) {
+        width: 50%;
+      }
 
       .key {
         font-weight: bold;
