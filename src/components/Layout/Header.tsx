@@ -112,17 +112,16 @@ export const Header = () => {
         />
       </Link>
       <ul>
-        {navigationItems.map((item) => (
-          <li>
+        {navigationItems.map((item, index) => (
+          <li key={index}>
             <NavLink to={item.path}>{item.text}</NavLink>
           </li>
         ))}
         <li>
           <IconButton
-            onClick={() => {
-              console.log('test');
-              setCookie('theme', cookies.theme === 'light' ? 'dark' : 'light');
-            }}
+            onClick={() =>
+              setCookie('theme', cookies.theme === 'light' ? 'dark' : 'light')
+            }
           >
             <Tooltip
               title={
