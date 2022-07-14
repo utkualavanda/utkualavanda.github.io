@@ -1,10 +1,13 @@
 .page-not-found {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   img {
-    width: 80%;
+    width: 100%;
+  }
+
+  .return-home-button {
+    display: flex;
+	justify-content: center;
+	button {
+		width: 250px;
+	}
   }
 }

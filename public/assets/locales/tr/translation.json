@@ -23,5 +23,6 @@
   "travel_rome_title": "Roma",
   "travel_hamburg_title": "Hamburg",
   "travel_lübeck_title": "Lübeck",
-  "page_not_found_title": "Sayfa Bulunamadı"
+  "page_not_found_title": "Sayfa Bulunamadı",
+  "page_not_found_return_home": "Anasayfa'ya Dön"
 }
