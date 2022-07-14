@@ -14,10 +14,10 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    supportedLngs: ['en', 'tr'],
-    fallbackLng: 'en',
+    supportedLngs: ['en', 'tr', 'jp'],
+    fallbackLng: navigator.language.split('-')[0],
     detection: {
-      order: ['cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
+      order: ['cookie'],
       caches: ['cookie'],
     },
     backend: {

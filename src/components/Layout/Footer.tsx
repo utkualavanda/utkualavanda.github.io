@@ -21,7 +21,11 @@ export const Footer = () => (
             target="blank"
             rel="noopener noreferrer"
           >
-            <img src="images/github.png" alt="github" />
+            <img
+              src="images/github.png"
+              alt="github"
+              className="page-footer__github-logo"
+            />
           </a>
         </li>
       </Tooltip>

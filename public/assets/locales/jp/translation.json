@@ -1,0 +1,21 @@
+{
+  "header_navigation_resume": "履歴書",
+  "header_navigation_travel": "旅行",
+  "header_light_theme_mode": "ライトモード",
+  "header_dark_theme_mode": "ダークモード",
+  "home_welcome_message": "私の個人的なウェブサイトへようこそ。 ここに私の個人情報のいくつかを見つけることができます。 上のタブにアクセスして、私の専門的な経験や旅行について詳しく知ることもできます。",
+  "home_personal_info_name_key": "氏名",
+  "home_personal_info_name_value": "ウツク アラバンダ",
+  "home_personal_info_birth_year_key": "生年",
+  "home_personal_info_nationality_key": "生年",
+  "home_personal_info_nationality_value": "トルコ人",
+  "home_personal_info_residence_key": "現在の居住地",
+  "home_personal_info_residence_value": "イスタンブール / トルコ",
+  "home_personal_info_workplace_key": "現在の職場",
+  "home_personal_info_workplace_value": "セケルバンク",
+  "home_personal_info_job_title_key": "称号",
+  "home_personal_info_job_title_value": "フロントエンドデベロッパー",
+  "travel_italy_header": "イタリア",
+  "travel_germany_header": "ドイツ",
+  "page_not_found_browser_title": "ページが見つかりません"
+}

@@ -5,7 +5,7 @@ import { Layout } from '../../components';
 export const Travel = () => {
   const { t } = useTranslation();
   return (
-    <Layout title="Travel">
+    <Layout title={t('header_navigation_travel')}>
       <div className="travel-container">
         <div className="travel-header">{t('travel_italy_header')}</div>
         <Tooltip title="Naples" arrow placement="bottom">

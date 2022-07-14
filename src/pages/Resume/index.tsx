@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 import { Layout } from '../../components';
 import resume from '../../static/resume.pdf';
 
 export const Resume = () => {
+  const { t } = useTranslation();
+
   return (
-    <Layout title="Resume">
+    <Layout title={t('header_navigation_resume')}>
       <iframe
         src={resume}
         title="resume"
