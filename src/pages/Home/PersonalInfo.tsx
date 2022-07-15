@@ -5,7 +5,9 @@ export const PersonalInfo = () => {
 
   return (
     <div className="personal-info">
-      <img src="images/profile-picture.jpg" alt="personal img" />
+      <div className="personal-info-image">
+        <img src="images/profile-picture.jpg" alt="personal img" />
+      </div>
       <div className="details-list">
         <div className="details-list__item">
           <div className="key">{t('home_personal_info_name_key')}</div>
