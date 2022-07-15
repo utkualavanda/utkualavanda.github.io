@@ -6,10 +6,16 @@ import {
   List,
   ListItem,
   ListItemButton,
+  ListItemIcon,
   ListItemText,
   Tooltip,
 } from '@mui/material';
-import { Menu } from '@mui/icons-material';
+import {
+  Menu,
+  MenuOpen,
+  FlightTakeoff,
+  Description,
+} from '@mui/icons-material';
 import i18next from 'i18next';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
@@ -20,6 +26,7 @@ import { Select } from '../../components';
 interface INavigationItem {
   path: string;
   text: string;
+  icon: any;
 }
 
 export const Header = () => {
@@ -32,10 +39,12 @@ export const Header = () => {
     {
       path: '/resume',
       text: t('header_navigation_resume'),
+      icon: <Description />,
     },
     {
       path: '/travel',
       text: t('header_navigation_travel'),
+      icon: <FlightTakeoff />,
     },
   ];
 
@@ -161,7 +170,7 @@ export const Header = () => {
           <IconButton
             onClick={() => setShowBurgerMenu((prevState) => !prevState)}
           >
-            <Menu />
+            {showBurgerMenu ? <MenuOpen /> : <Menu />}
           </IconButton>
         </li>
         <Drawer
@@ -173,6 +182,7 @@ export const Header = () => {
             {navigationItems.map((item, index) => (
               <ListItem key={index} disablePadding>
                 <ListItemButton>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText
                     primary={item.text}
                     onClick={() => navigate(item.path)}

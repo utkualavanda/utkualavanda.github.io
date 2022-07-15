@@ -30,19 +30,19 @@
         text-decoration: none;
         font-weight: bold;
 
+        &:link,
+        &:visited {
+          color: #999;
+        }
+
+        &.active {
+          padding-bottom: 10px;
+          border-bottom: 2px solid green;
+        }
+
         @media only screen and (max-width: 575px) {
           display: none;
         }
-      }
-
-      a:link,
-      a:visited {
-        color: #999;
-      }
-
-      a.active {
-        padding-bottom: 10px;
-        border-bottom: 2px solid green;
       }
 
       &.burger-menu-button {
