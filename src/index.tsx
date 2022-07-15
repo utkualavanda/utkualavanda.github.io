@@ -14,14 +14,14 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    supportedLngs: ['en', 'tr', 'jp'],
+    supportedLngs: ['en', 'tr', 'ja'],
     fallbackLng: navigator.language.split('-')[0],
     detection: {
       order: ['cookie'],
       caches: ['cookie'],
     },
     backend: {
-      loadPath: '/assets/locales/{{lng}}/translation.json',
+      loadPath: '/locales/{{lng}}/translation.json',
     },
     react: { useSuspense: false },
   });

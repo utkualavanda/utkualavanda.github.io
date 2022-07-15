@@ -1,7 +1,7 @@
 export enum languageOptionsEnum {
   English = 'en',
   Turkish = 'tr',
-  Japanese = 'jp',
+  Japanese = 'ja',
 }
 
 export const languageOptionsConst = [
