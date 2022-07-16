@@ -22,7 +22,10 @@ import i18next from 'i18next';
 import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
 
-import { languageOptionsConst } from '../../common/constants';
+import {
+  languageOptionsConst,
+  languageOptionsEnum,
+} from '../../common/constants';
 
 interface INavigationItem {
   path: string;
@@ -165,7 +168,16 @@ export const Header = () => {
                 horizontal: 'left',
               },
             }}
-            value={cookies.i18next || navigator.language.split('-')[0]}
+            value={
+              cookies.i18next
+                ? cookies.i18next
+                : languageOptionsConst?.filter(
+                    (languageOpt) =>
+                      languageOpt.Value === navigator.language.split('-')[0]
+                  )?.length
+                ? navigator.language.split('-')[0]
+                : languageOptionsEnum.English
+            }
           >
             {languageOptionsConst.map((languageOpt, i) => (
               <MenuItem

@@ -17,9 +17,9 @@ i18n
   .use(HttpApi)
   .init({
     supportedLngs: ['en', 'tr', 'ja'],
-    fallbackLng: navigator.language.split('-')[0],
+    fallbackLng: 'en',
     detection: {
-      order: ['cookie'],
+      order: ['cookie', 'navigator'],
       caches: ['cookie'],
     },
     backend: {
