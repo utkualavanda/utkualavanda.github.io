@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import {
   Drawer,
   IconButton,
@@ -35,6 +35,7 @@ interface INavigationItem {
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
   const [cookies, setCookie] = useCookies(['i18next', 'theme']);
   const [showBurgerMenu, setShowBurgerMenu] = useState<boolean>(false);
@@ -211,13 +212,14 @@ export const Header = () => {
         >
           <List>
             {navigationItems.map((item, index) => (
-              <ListItem key={index} disablePadding>
-                <ListItemButton>
+              <ListItem
+                key={index}
+                disablePadding
+                selected={item.path === location.pathname}
+              >
+                <ListItemButton onClick={() => navigate(item.path)}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText
-                    primary={item.text}
-                    onClick={() => navigate(item.path)}
-                  />
+                  <ListItemText primary={item.text} />
                 </ListItemButton>
               </ListItem>
             ))}
