@@ -9,6 +9,8 @@ import {
   ListItemIcon,
   ListItemText,
   Tooltip,
+  Select,
+  MenuItem,
 } from '@mui/material';
 import {
   Menu,
@@ -21,7 +23,6 @@ import { useCookies } from 'react-cookie';
 import { useTranslation } from 'react-i18next';
 
 import { languageOptionsConst } from '../../common/constants';
-import { Select } from '../../components';
 
 interface INavigationItem {
   path: string;
@@ -154,17 +155,35 @@ export const Header = () => {
         </li>
         <li>
           <Select
-            options={{
-              data: languageOptionsConst,
-              displayField: 'Name',
-              displayValue: 'Value',
+            MenuProps={{
+              anchorOrigin: {
+                vertical: 'bottom',
+                horizontal: 'left',
+              },
+              transformOrigin: {
+                vertical: 'top',
+                horizontal: 'left',
+              },
             }}
             value={cookies.i18next || navigator.language.split('-')[0]}
-            onChange={(val) => {
-              setCookie('i18next', val);
-              i18next.changeLanguage(val);
-            }}
-          />
+          >
+            {languageOptionsConst.map((languageOpt, i) => (
+              <MenuItem
+                key={i}
+                value={languageOpt.Value}
+                onClick={() => {
+                  setCookie('i18next', languageOpt.Value);
+                  i18next.changeLanguage(String(languageOpt.Value));
+                }}
+              >
+                <span
+                  key={i}
+                  className={`flag-icon flag-icon-${languageOpt.CountryCode}`}
+                />
+                {languageOpt.Name}
+              </MenuItem>
+            ))}
+          </Select>
         </li>
         <li className="burger-menu-button">
           <IconButton

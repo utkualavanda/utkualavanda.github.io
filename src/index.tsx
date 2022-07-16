@@ -7,7 +7,9 @@ import HttpApi from 'i18next-http-backend';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 import './_assets/style.scss';
+import 'flag-icon-css/css/flag-icons.min.css';
 
 i18n
   .use(initReactI18next)
