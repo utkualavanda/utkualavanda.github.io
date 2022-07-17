@@ -1,4 +1,5 @@
 {
+  "homepage": "http://utkualavanda.github.io/personal-web",
   "name": "personal-web",
   "contributors": [
     "Utku Alavanda"
@@ -14,6 +15,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "flag-icon-css": "^4.1.7",
+    "gh-pages": "^4.0.0",
     "i18next": "^21.8.13",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
@@ -29,6 +31,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
